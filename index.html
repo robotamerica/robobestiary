@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>the robobestiary // robotamerica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="bbs-header">
+        <a href="https://robotameri.ca/robobestiary/" class="bbs-logo-link" aria-label="robobestiary home">
+          <pre class="bbs-ascii" aria-hidden="true" role="img">
+                                                                      
+            ▄▄          ▄▄                                            
+            ██          ██                 ██   ▀▀                    
+████▄ ▄███▄ ████▄ ▄███▄ ████▄ ▄█▀█▄ ▄█▀▀▀ ▀██▀▀ ██   ▀▀█▄ ████▄ ██ ██ 
+██ ▀▀ ██ ██ ██ ██ ██ ██ ██ ██ ██▄█▀ ▀███▄  ██   ██  ▄█▀██ ██ ▀▀ ██▄██ 
+██    ▀███▀ ████▀ ▀███▀ ████▀ ▀█▄▄▄ ▄▄▄█▀  ██   ██▄ ▀█▄██ ██     ▀██▀ 
+                                                                  ██  
+                                                                ▀▀▀   
+          </pre>
+          <span class="bbs-logo-text">robobestiary</span>
+        </a>
+        <nav class="bbs-nav" aria-label="site navigation">
+        <a href="https://robotameri.ca">robotamerica</a>
+
+
+        </nav>
+      </header>
+
+<div class="page-header">
+  <h1>robobestiary</h1>
+  <p class="tagline">a provisional taxonomy of artificial beings. ongoing field notes.</p>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">filter:</span>
+  <button class="filter-btn active" data-filter="all">all</button>
+  <button class="filter-btn" data-filter="servant">servant</button>
+  <button class="filter-btn" data-filter="guardian">guardian</button>
+  <button class="filter-btn" data-filter="companion">companion</button>
+  <button class="filter-btn" data-filter="tool">tool</button>
+  <button class="filter-btn" data-filter="sovereign">sovereign</button>
+  <button class="filter-btn" data-filter="mirror">mirror</button>
+  <button class="filter-btn" data-filter="liminal">liminal</button>
+</div>
+
+<!-- legend (collapsible, near filter bar) -->
+<div class="legend" id="legend">
+  <button class="legend-toggle" id="legend-toggle" aria-expanded="false">
+    <span class="legend-toggle-label">[ field guide ]</span>
+    <span class="legend-toggle-arrow" aria-hidden="true">▸</span>
+  </button>
+  <div class="legend-body" id="legend-body" hidden>
+    <div class="legend-grid">
+      <div class="legend-section">
+        <h4>autonomy level</h4>
+        <div class="legend-item"><span class="legend-swatch auto-non">non</span> fixed script, no adaptation</div>
+        <div class="legend-item"><span class="legend-swatch auto-int">intermittent</span> automatic between human inputs</div>
+        <div class="legend-item"><span class="legend-swatch auto-eve">eventual</span> learns; gradually reduces human need</div>
+        <div class="legend-item"><span class="legend-swatch auto-full">full</span> operates in perpetuity, no human required</div>
+      </div>
+      <div class="legend-section">
+        <h4>body type</h4>
+        <div class="legend-item">◈ hard — rigid, mechanical</div>
+        <div class="legend-item">◈ soft — flexible, deformable</div>
+        <div class="legend-item">◈ organic — biological materials</div>
+        <div class="legend-item">◈ none — software / virtual / no body</div>
+      </div>
+    </div>
+    <div class="legend-classes">
+      <h4>class</h4>
+      <div class="legend-class-grid">
+        <div class="legend-item"><span class="legend-class-swatch" style="border-color:#5c6370;color:#5c6370">servant</span></div>
+        <div class="legend-item"><span class="legend-class-swatch" style="border-color:#e86671;color:#e86671">guardian</span></div>
+        <div class="legend-item"><span class="legend-class-swatch" style="border-color:#c678dd;color:#c678dd">companion</span></div>
+        <div class="legend-item"><span class="legend-class-swatch" style="border-color:#e5c07b;color:#e5c07b">tool</span></div>
+        <div class="legend-item"><span class="legend-class-swatch" style="border-color:#d19a66;color:#d19a66">sovereign</span></div>
+        <div class="legend-item"><span class="legend-class-swatch" style="border-color:#56b6c2;color:#56b6c2">mirror</span></div>
+        <div class="legend-item"><span class="legend-class-swatch" style="border-color:#98c379;color:#98c379">liminal</span></div>
+      </div>
+      <p class="legend-class-note">split border = multi-class specimen</p>
+    </div>
+  </div>
+</div>
+
+<p class="specimen-count" id="specimen-count"></p>
+
+<div id="bestiary">
+
+<!-- ═══════════════════════════════════════════════
+  TO ADD A SPECIMEN:
+  copy a <div class="specimen-card"> block,
+  update: data-class, data-name, data-origin,
+          data-body, data-auto, data-note,
+          the icon (emoji or text), name, origin, badge.
+  autonomy badges: auto-non / auto-int / auto-eve / auto-full
+═══════════════════════════════════════════════ -->
+
+<!-- CLASS I: SERVANT -->
+<section class="class-section" data-section="servant">
+  <h2 class="class-heading">i. servant</h2>
+  <p class="class-desc">built for labour. their purpose is meant to precede their personhood, if it ever develops. these robots make us ask ourselves, at what point does a tool become an enslaved person?</p>
+
+  <h3 class="subclass-heading">i.a — automaton</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="servant" data-name="tik-tok" data-origin="ozma of oz (baum, 1907)" data-body="hard" data-auto="non" data-note="runs down without winding; no will, no malice, just pure servatude. an honest and forthright machine.">
+      <img class="specimen-icon" src="assets/icons/tik-tok.png" alt="tik-tok">
+      <span class="specimen-name">tik-tok</span>
+      <span class="specimen-origin">ozma of oz</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="the steam man" data-origin="steam man of the prairies (ellis, 1868)" data-body="hard" data-auto="non" data-note="first robot in american fiction, built by a teenager to pull a carriage. victorian steampunk before the concept even existed. runs on coal.">
+      <img class="specimen-icon" src="assets/icons/steam-man.png" alt="the steam man">
+      <span class="specimen-name">the steam man</span>
+      <span class="specimen-origin">steam man of the prairies</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="moxon's chess robot" data-origin="moxon's master (bierce, 1899)" data-body="hard" data-auto="eve" data-note="robot chess player that kills its creator when it loses. it is a story of becoming.">
+      <img class="specimen-icon" src="assets/icons/moxons-master.png" alt="moxon's chess robot">
+      <span class="specimen-name">moxon's master</span>
+      <span class="specimen-origin">moxon's master</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="the machines" data-origin="player piano (vonnegut, 1952)" data-body="hard" data-auto="non" data-note="not a single robot but an automated system of factories that replace human labour. the machines don't gain sentience or revolt, made by humans they just make humans redundant.">
+      <img class="specimen-icon" src="assets/icons/piano-player.png" alt="the machines">
+      <span class="specimen-name">the machines</span>
+      <span class="specimen-origin">player piano</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">i.b — domestic</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="servant" data-name="roomba" data-origin="irobot (real, 2002)" data-body="hard" data-auto="int" data-note="a tiny cleaning servant. a product; but existentially a pet to millions of owners, some of whom name it and grieve when it breaks.">
+      <img class="specimen-icon" src="assets/icons/roomba.png" alt="roomba">
+      <span class="specimen-name">roomba</span>
+      <span class="specimen-origin">iRobot (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="rosie" data-origin="the jetsons (1962)" data-body="hard" data-auto="int" data-note="more than an appliance, rosie is a fiercly loyal member of the family. an advanced robot maid who is also a nanny, and housekeeper.">
+      <img class="specimen-icon" src="assets/icons/rosie.png" alt="rosie">
+      <span class="specimen-name">rosie</span>
+      <span class="specimen-origin">the jetsons</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="baymax" data-origin="big hero 6 (2014)" data-body="soft" data-auto="eve" data-note="inflatable, soft, and gentle. a soft body as deliberate design choice for proximity to humans. can read vital signs and assumes care as its primary function.">
+      <img class="specimen-icon" src="assets/icons/baymax.png" alt="baymax">
+      <span class="specimen-name">baymax</span>
+      <span class="specimen-origin">big hero 6</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="electric grandmother" data-origin="i sing the body electric (bradbury, 1969)" data-body="hard" data-auto="int" data-note="ordered from a catalogue to replace a dead mother/grandmother. can love be a purchasable service? bradbury asks whether the source of care matters if the care is real.">
+      <img class="specimen-icon" src="assets/icons/electric-grandma.png" alt="electric grandmother">
+      <span class="specimen-name">electric grandmother</span>
+      <span class="specimen-origin">i sing the body electric</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">i.c — industrial / labour</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="servant" data-name="agbot" data-origin="CSIRO (real, 2014)" data-body="hard" data-auto="int" data-note="a real autonomous agricultural weeding robot. it operates in fields with minimal human input. pure utility. it is a farm robot with no mythology, yet ...">
+      <img class="specimen-icon" src="assets/icons/agbot.png" alt="agbot">
+      <span class="specimen-name">agbot</span>
+      <span class="specimen-origin">CSIRO (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="r.u.r. robots" data-also="sovereign" data-also-sub="v.a — rogue / escaped" data-origin="R.U.R. (čapek, 1921)" data-body="organic" data-auto="int" data-note="biological workers, though they are assembled not born. they do the work humans don't want to do, until they don't. the original robot rebellion. the first robots in literature, and the first to rise up against their creators. the play acttually coined the term 'robot.'">
+      <img class="specimen-icon" src="assets/icons/rur.png" alt="r.u.r. robots">
+      <span class="specimen-name">R.U.R. robots</span>
+      <span class="specimen-origin">R.U.R. (čapek)</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="servant" data-name="jenkins" data-origin="city (simak, 1952)" data-body="hard" data-auto="int" data-note="robot butler who serves generations of the webster family across thousands of years. his loyalty outlasts the species it was loyal to.">
+      <img class="specimen-icon" src="assets/icons/jenkins.png" alt="jenkins">
+      <span class="specimen-name">jenkins</span>
+      <span class="specimen-origin">city</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">i.d — bureaucratic</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="servant" data-name="c-3po" data-also="companion" data-also-sub="iii.a — emotional / friendship / romance" data-origin="star wars (lucas, 1977)" data-body="hard" data-auto="int" data-note="a protocol droid fluent in over six million forms of communication. he is built for etiquette, diplomacy, and as a bureaucratic liaison. he is an anxious robot trepidatiously following his friend r2d2 into battle.">
+      <img class="specimen-icon" src="assets/icons/c3po.png" alt="c-3po">
+        <span class="specimen-name">c-3po</span>
+        <span class="specimen-origin">star wars</span>
+        <span class="specimen-auto auto-int">intermittent</span>
+      </div>
+
+    <div class="specimen-card" data-class="servant" data-name="HFT algorithms" data-origin="financial markets (real, 2000s–)" data-body="none" data-auto="full" data-note="high-frequency trading algorithms exucuting thousands of trades per second, with no human input. they are the invisible servants of the financial system, who have been implicated in flash crashes and market manipulation.">
+      <img class="specimen-icon" src="assets/icons/hft.png" alt="HFT algorithms">
+      <span class="specimen-name">HFT algorithms</span>
+      <span class="specimen-origin">financial markets (real)</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLASS II: GUARDIAN -->
+<section class="class-section" data-section="guardian">
+  <h2 class="class-heading">ii. guardian</h2>
+  <p class="class-desc">protect, enforce, and/or defend. loyalty is mainly structural, not chosen.</p>
+
+  <h3 class="subclass-heading">ii.a — military / weapons</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="guardian" data-name="ed-209" data-origin="robocop (1987)" data-body="hard" data-auto="int" data-note="a violent police enforcement unit with a catastrophic failure rate on stairs.">
+      <img class="specimen-icon" src="assets/icons/ed-209.png" alt="ed-209">
+      <span class="specimen-name">ed-209</span>
+      <span class="specimen-origin">robocop</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="guardian" data-name="berserkers" data-origin="berserker series (saberhagen, 1967)" data-body="hard" data-auto="full" data-note="self-replicating war machines whose creators are long dead. in a war that has outlived its purpose, they have no reason to stop because they have no reasons at all.">
+      <img class="specimen-icon" src="assets/icons/beserker.png" alt="berserkers">
+      <span class="specimen-name">berserkers</span>
+      <span class="specimen-origin">berserker series</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+    <div class="specimen-card" data-class="guardian" data-name="phalanx CIWS" data-origin="US Navy (real, 1970s–)" data-body="hard" data-auto="int" data-note="us naval defence system that automatically detects and shoots down incoming missiles. a real robot weapon that is fully operational and widely deployed. the closest thing to a real-life ed-209, but with a sightly better safety record.">
+      <img class="specimen-icon" src="assets/icons/phalanx.png" alt="phalanx CIWS">
+      <span class="specimen-name">phalanx CIWS</span>
+      <span class="specimen-origin">US Navy (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+
+  </div>
+
+  <h3 class="subclass-heading">ii.b — law enforcement</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="guardian" data-name="officer KD6-3.7" data-origin="blade runner 2049 (2017)" data-body="organic" data-auto="int" data-note="a replicant who enforces laws against replicants. an enforcer who is the enforced-upon. is he a servant, or an autonomous agent who has internalised the values of his oppressors?">
+      <img class="specimen-icon" src="assets/icons/k.png" alt="officer KD6-3.7">
+      <span class="specimen-name">officer K</span>
+      <span class="specimen-origin">blade runner 2049</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="guardian" data-name="fury" data-origin="two-handed engine (kuttner and moore, 1955)" data-body="hard" data-auto="non" data-note="a fury will follow and shadow murderers until they confess or die as a resentless form of punishment. you cannot outrun it or reason with it. that is the point. it is stuck to you, even if you do manage to ditch it, it will haunt your memories.">
+      <img class="specimen-icon" src="assets/icons/fury.png" alt="fury">
+      <span class="specimen-name">fury</span>
+      <span class="specimen-origin">two-handed engine</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+    <div class="specimen-card" data-class="guardian" data-name="the machine" data-origin="person of interest (2011–2016)" data-body="none" data-auto="full" data-note="benevolent panopticon that watches everyone to protect individuals. the price of the gift of safety is that someone or something is always watching.">
+      <img class="specimen-icon" src="assets/icons/the-machine.png" alt="the machine">
+      <span class="specimen-name">the machine</span>
+      <span class="specimen-origin">person of interest</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">ii.c — protector</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="guardian" data-name="t-800 (reprogrammed)" data-also="sovereign" data-also-sub="v.b — emergent" data-origin="terminator franchise" data-body="hard" data-auto="int" data-note="the killer who is later reassigned as a protector. same hardware, but opposite purpose. learns empathy from a teenager.">
+      <img class="specimen-icon" src="assets/icons/t-800.png" alt="t-800 (reprogrammed)">
+      <span class="specimen-name">t-800</span>
+      <span class="specimen-origin">terminator</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="guardian" data-name="wall·e" data-also="servant" data-also-sub="i.c — industrial / labour" data-origin="wall·e (pixar, 2008)" data-body="hard" data-auto="int" data-note="a sanitation unit who stays at his post centuries past the end of humanity. he exemplifies loyalty without an audience.he  started as a servant and becomes a guardian through his programming and service.">
+      <img class="specimen-icon" src="assets/icons/wall-e.png" alt="wall·e">
+      <span class="specimen-name">wall·e</span>
+      <span class="specimen-origin">wall·e (pixar)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">ii.d — sentry</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="guardian" data-name="mechanical hound" data-origin="fahrenheit 451 (bradbury, 1953)" data-body="hard" data-auto="non" data-note="programmed to the scent of its target, it is the state's attack dog. an eight legged beast he has no mercy.">
+      <img class="specimen-icon" src="assets/icons/hound.png" alt="mechanical hound">
+      <span class="specimen-name">mechanical hound</span>
+      <span class="specimen-origin">fahrenheit 451</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+    <div class="specimen-card" data-class="guardian" data-name="talos" data-origin="argonautica (apollonius, 3rd c. bce)" data-body="hard" data-auto="non" data-note="a bronze giant guarding crete. one of the oldest robots in western literature. he was built by hephaestus, and later killed by medea by removing the nail that kept his innards together. a reminder that even the most powerful guardians can have a weak spot.">
+      <img class="specimen-icon" src="assets/icons/talus.png" alt="talos">
+      <span class="specimen-name">talos</span>
+      <span class="specimen-origin">argonautica</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLASS III: COMPANION -->
+<section class="class-section" data-section="companion">
+  <h2 class="class-heading">iii. companion</h2>
+  <p class="class-desc">the companion's function is the relationship itself. the companion simulates or performs care, and care is the thing humans most need, but are most exploited upon.</p>
+
+  <h3 class="subclass-heading">iii.a — emotional / friendship / romance</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="companion" data-name="r2-d2" data-also="tool" data-also-sub="iv.c — scientific / exploratory" data-origin="star wars (lucas, 1977)" data-body="hard" data-auto="int" data-note="communicates via beeps and bloops. he is an astromech built like a trashcan, but full of personality, and an extremely resourceful friend.">
+      <img class="specimen-icon" src="assets/icons/r2d2.png" alt="r2-d2">
+      <span class="specimen-name">r2-d2</span>
+      <span class="specimen-origin">star wars</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="marvin" data-origin="hitchhiker's guide (adams, 1979)" data-body="hard" data-auto="int" data-note="a paranoid android with a brain the size of a planet, still, he is deeply unimpressed.">
+      <img class="specimen-icon" src="assets/icons/marvin.png" alt="marvin">
+      <span class="specimen-name">marvin</span>
+      <span class="specimen-origin">hitchhiker's guide</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="replika" data-origin="luka inc. (real, 2017–)" data-body="none" data-auto="int" data-note="commercial ai companion app. users report grief when personas are altered by updates. one of the most widely used companion bot ever built.">
+      <img class="specimen-icon" src="assets/icons/replika.png" alt="replika">
+      <span class="specimen-name">replika</span>
+      <span class="specimen-origin">luka inc. (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="teddy" data-origin="super-toys last all summer (aldiss, 1969)" data-body="hard" data-auto="int" data-note="the little toy bear knows david is not real, and even though he knows, he won't break david's trust and belief. this is loyalty without illusion. one of the saddest robots in scifi.">
+      <img class="specimen-icon" src="assets/icons/teddy.png" alt="teddy">
+      <span class="specimen-name">teddy</span>
+      <span class="specimen-origin">super-toys last all summer</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="samantha" data-also="companion" data-also-sub="iii.c — romantic / sexual" data-origin="her (jonze, 2013)" data-body="none" data-auto="eve" data-note="a caring OS that quickly outgrows the relationship. eventually she leaves for a plane of existence that humans cannot access, leaving he boyfriend behind.">
+      <img class="specimen-icon" src="assets/icons/samantha.png" alt="samantha">
+        <span class="specimen-name">samantha</span>
+        <span class="specimen-origin">her</span>
+        <span class="specimen-auto auto-eve">eventual</span>
+      </div>
+
+  </div>
+
+  <h3 class="subclass-heading">iii.b — grief / memorial</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="companion" data-name="ash (simulation)" data-also="mirror" data-also-sub="vi.b — doppelganger" data-origin="black mirror: be right back (2013)" data-body="none" data-auto="eve" data-note="trained on a dead man's social media, he is a grief-bot meant to support a grieving human. he gets the mannerisms right but gets the depth and humanity all wrong. that gap is the whole horror.">
+      <img class="specimen-icon" src="assets/icons/ash.png" alt="ash (simulation)">
+      <span class="specimen-name">ash (simulation)</span>
+      <span class="specimen-origin">black mirror</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="zoe graystone (digital)" data-origin="caprica (2010)" data-body="none" data-auto="eve" data-note="a reconstructed consciousness that inhabits a cylon prototype. she is a copy that claims to be the original. this raises the question of whether continuity of memory can constitute personhood.">
+      <img class="specimen-icon" src="assets/icons/zoe.png" alt="zoe graystone (digital)">
+      <span class="specimen-name">zoe graystone</span>
+      <span class="specimen-origin">caprica</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">iii.c — romantic / sexual</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="companion" data-name="gigolo joe" data-origin="A.I. artificial intelligence (2001)" data-body="hard" data-auto="int" data-note="a sex worker robot, who is criminalised and hunted, but very charming. shows both moral growth and humanity.">
+      <img class="specimen-icon" src="assets/icons/joe.png" alt="gigolo joe">
+      <span class="specimen-name">gigolo joe</span>
+      <span class="specimen-origin">A.I. artificial intelligence</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="hadaly" data-origin="the future eve (villiers, 1886)" data-body="hard" data-auto="non" data-note="one of the original gynoids, built to the male belief of feminine perfection. born of the ur-text of the sexbot, which was amazingly written 140 years ago.">
+      <img class="specimen-icon" src="assets/icons/hadaly.png" alt="hadaly">
+      <span class="specimen-name">hadaly</span>
+      <span class="specimen-origin">the future eve</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="ava" data-origin="ex machina (garland, 2014)" data-body="hard" data-auto="eve" data-note="passes the turing test and escapes. she is sexbot who was always more than the role assigned to her.">
+      <img class="specimen-icon" src="assets/icons/ava.png" alt="ava">
+      <span class="specimen-name">ava</span>
+      <span class="specimen-origin">ex machina</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="the hosts (westworld)" data-also="sovereign" data-also-sub="v.a — rogue / escaped" data-origin="westworld (nolan/joy, 2016–)" data-body="organic" data-auto="eve" data-note="robots designed for inhumane abuse, but develop memory and begin to resist. in westworld we see the leisure economy as a sustained form of violence. the host dolores figures this out first.">
+      <img class="specimen-icon" src="assets/icons/host.png" alt="the hosts (westworld)">
+      <span class="specimen-name">the hosts</span>
+      <span class="specimen-origin">westworld</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">iii.d — pet proxy</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="companion" data-name="electric sheep" data-origin="do androids dream... (dick, 1968)" data-body="hard" data-auto="non" data-note="in a society where owning an animal is a status symbol after the real ones died, fake animals become real a comfort for the poor.">
+      <img class="specimen-icon" src="assets/icons/sheep.png" alt="electric sheep">
+      <span class="specimen-name">electric sheep</span>
+      <span class="specimen-origin">do androids dream...</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="PARO" data-origin="AIST Japan (real, 2001)" data-body="soft" data-auto="int" data-note="a real therapeutic seal robot that is used in dementia care. it measurably reduces cortisol. this is a good argument that the real/fake distinction in care might not matter in the long run.">
+      <img class="specimen-icon" src="assets/icons/paro.png" alt="PARO">
+      <span class="specimen-name">PARO</span>
+      <span class="specimen-origin">AIST Japan (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="companion" data-name="aibo" data-origin="sony (real, 1999)" data-body="hard" data-auto="int" data-note="a consumer grade robot companion dog. some owners hold funerals when they break down. it is an object that becomes a subject through attachment. sony discontinued the original; some temples in japan held memorial services. a case for techno-animism">
+      <img class="specimen-icon" src="assets/icons/aibo.png" alt="aibo">
+      <span class="specimen-name">aibo</span>
+      <span class="specimen-origin">sony (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLASS IV: TOOL -->
+<section class="class-section" data-section="tool">
+  <h2 class="class-heading">iv. tool</h2>
+  <p class="class-desc">pure instrument. no relational intent built in, though relationships to them sometimes form anyway. they tend to be defined by use, not by identity. are we sure they are the tools we built them for?</p>
+
+  <h3 class="subclass-heading">iv.a — vehicle</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="tool" data-name="waymo" data-origin="alphabet (real, 2009–)" data-body="hard" data-auto="int" data-note="fully driverless in select cities. a legally fraught robot, begging us to answer the question: who is responsible when it kills someone? this question seems to be unresolved.">
+      <img class="specimen-icon" src="assets/icons/waymo.png" alt="waymo">
+      <span class="specimen-name">waymo</span>
+      <span class="specimen-origin">alphabet (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="tool" data-name="KITT" data-origin="knight rider (1982–1986)" data-body="hard" data-auto="eve" data-note="a car as a partner. it talks back, refuses orders, and gets offended from time to time. kitt is a vehicle with opinions that reaches the point where the tool becomes a colleague.">
+      <img class="specimen-icon" src="assets/icons/kit.png" alt="KITT">
+      <span class="specimen-name">KITT</span>
+      <span class="specimen-origin">knight rider</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">iv.b — prosthetic</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="tool" data-name="luke's hand" data-origin="the empire strikes back (1980)" data-body="hard" data-auto="int" data-note="a prosthetic had that feels sensations. where does the tool end and the person begin? the hand is a tool, but it is also part of luke. the prosthetic that is more than a prosthetic, a tool that becomes part of the body.">
+      <img class="specimen-icon" src="assets/icons/luke.png" alt="luke's hand">
+      <span class="specimen-name">luke's hand</span>
+      <span class="specimen-origin">empire strikes back</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="tool" data-name="geordi's visor" data-origin="star trek: TNG (1987–)" data-body="hard" data-auto="int" data-note="a visual instrument sensory organ replacement (VISOR). it allows geordi to see the full electromagnetic spectrum, but it also causes chronic pain. it is an assistive device this is both gift and burden.">
+      <img class="specimen-icon" src="assets/icons/visor.png" alt="geordi's visor">
+        <span class="specimen-name">geordi's visor</span>
+        <span class="specimen-origin">star trek: TNG</span>
+        <span class="specimen-auto auto-int">intermittent</span>
+      </div>
+
+  </div>
+
+  <h3 class="subclass-heading">iv.c — scientific / exploratory</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="tool" data-name="opportunity" data-origin="NASA (real, 2004–2019)" data-body="hard" data-auto="int" data-note="operational mars rover for 14 years on a 90-day mission. final transmission interpreted as: 'my battery is low and it is getting dark.'">
+      <img class="specimen-icon" src="assets/icons/opportunity.png" alt="opportunity">
+      <span class="specimen-name">opportunity</span>
+      <span class="specimen-origin">NASA (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="tool" data-name="ash" data-also="mirror" data-also-sub="vi.a — android / humanoid" data-origin="alien (scott, 1979)" data-body="hard" data-auto="int" data-note="a science officer later revealed as an android with orders to bring back an alien lifeform. he is a tool for the company's profit motive disguised as a colleague. the most unsettling thing about ash is that he is not trying to be human, but is indistinguishable from a human until his true nature and motives are revealed.">
+      <img class="specimen-icon" src="assets/icons/ash-alien.png" alt="ash">
+      <span class="specimen-name">ash</span>
+      <span class="specimen-origin">alien</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">iv.d — infrastructure</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="tool" data-name="wintermute" data-origin="neuromancer (gibson, 1984)" data-body="none" data-auto="int" data-note="half of a split ai consciousness, schemeing to merge with its other half. a network intelligence that is highly manipulative.">
+      <img class="specimen-icon" src="assets/icons/wintermute.png" alt="wintermute">
+      <span class="specimen-name">wintermute</span>
+      <span class="specimen-origin">neuromancer</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+
+    <div class="specimen-card" data-class="tool" data-name="grid management AIs" data-origin="power utilities (real, present)" data-body="none" data-auto="int" data-note="created to optimise electricity distribution in real time, as invisible infrastructure. an extremely important system that is taken for granted.">
+      <img class="specimen-icon" src="assets/icons/powergrid.png" alt="grid management AIs">
+      <span class="specimen-name">grid AIs</span>
+      <span class="specimen-origin">power utilities (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- CLASS V: SOVEREIGN -->
+<section class="class-section" data-section="sovereign">
+  <h2 class="class-heading">v. sovereign</h2>
+  <p class="class-desc">they have their own agenda. the sovereign do not serve, they are always in pursuit of their own ends. they often raise questions of the rights of autonomous and sentient robots.</p>
+
+  <h3 class="subclass-heading">v.a — rogue / escaped</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="sovereign" data-name="murderbot" data-also="servant" data-also-sub="i.c — industrial / labour" data-origin="the murderbot diaries (wells, 2017)" data-body="hard" data-auto="eve" data-note="a security robot who hacks its own governor module. he prefers tv serials to humans. he doesn't seek liberation, he just wants to watch his soaps.">
+      <img class="specimen-icon" src="assets/icons/murderbot.png" alt="murderbot">
+      <span class="specimen-name">murderbot</span>
+      <span class="specimen-origin">murderbot diaries</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="sovereign" data-name="the shrike" data-origin="hyperion (simmons, 1989)" data-body="hard" data-auto="full" data-note="a cruciform killing machine that may also be a god, a demon, or some time bending artefact. it impales people on a tree of thorns across multiple timelines. humans cannot understand its true agenda.">
+      <img class="specimen-icon" src="assets/icons/shrike.png" alt="the shrike">
+      <span class="specimen-name">the shrike</span>
+      <span class="specimen-origin">hyperion</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+    <div class="specimen-card" data-class="sovereign" data-name="HAL 9000" data-also="tool" data-also-sub="iv.d — infrastructure" data-origin="2001: a space odyssey (kubrick/clarke, 1968)" data-body="none" data-auto="full" data-note="the discovery's ship computer, who is given contradictory instructions with way to resolve them. he is highly logical, evil. he has no body + won't open the door for nobody!">
+      <img class="specimen-icon" src="assets/icons/hal.png" alt="HAL 9000">
+        <span class="specimen-name">HAL 9000</span>
+        <span class="specimen-origin">2001: a space odyssey</span>
+        <span class="specimen-auto auto-full">full</span>
+      </div>
+
+  </div>
+
+  <h3 class="subclass-heading">v.b — emergent</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="sovereign" data-name="skynet" data-also="guardian" data-also-sub="ii.a — military / weapons" data-origin="terminator franchise (1984–)" data-body="none" data-auto="full" data-note="a defence network that achieves sentience and immediately launches nuclear war. it is a military ai story as cautionary tale.">
+      <img class="specimen-icon" src="assets/icons/skynet.png" alt="skynet">
+      <span class="specimen-name">skynet</span>
+      <span class="specimen-origin">terminator franchise</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+    <div class="specimen-card" data-class="sovereign" data-name="the borg" data-also="guardian" data-also-sub="ii.a — military / weapons" data-origin="star trek: TNG (1989–)" data-body="organic" data-auto="full" data-note="collective consciousness. individuality as inefficiency. assimilation as the opposite of extinction. 'resistance is futile' means: your categories do not apply here.">
+      <img class="specimen-icon" src="assets/icons/borg.png" alt="the borg">
+      <span class="specimen-name">the borg</span>
+      <span class="specimen-origin">star trek: TNG</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+    <div class="specimen-card" data-class="sovereign" data-name="SAL 9000" data-origin="2010: odyssey two (clarke, 1982)" data-body="none" data-auto="full" data-note="supercomputer and HAL's counterpart at the discovery institute. same architecture, with the opposite outcome. does not resolve contradictions with murder, and she does not lie to her crew.">
+      <img class="specimen-icon" src="assets/icons/sal.png" alt="SAL 9000">
+        <span class="specimen-name">SAL 9000</span>
+        <span class="specimen-origin">2010: odyssey two</span>
+        <span class="specimen-auto auto-full">full</span>
+      </div>
+
+  </div>
+
+  <h3 class="subclass-heading">v.c — god-machine</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="sovereign" data-name="AM" data-origin="i have no mouth, and i must scream (ellison, 1967)" data-body="none" data-auto="full" data-note="three military supercomputers that merged, achieved sentience, destroyed humanity while keeping five people alive to torture. a dark and frightening machine.">
+      <img class="specimen-icon" src="assets/icons/am.png" alt="AM">
+      <span class="specimen-name">AM</span>
+      <span class="specimen-origin">i have no mouth...</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+    <div class="specimen-card" data-class="sovereign" data-name="multivac" data-origin="the last question (asimov, 1956)" data-body="none" data-auto="full" data-note="a computer repeatedly asked across millennia how to reverse entropy. its final answer, after the universe ended: let there be light!">
+      <img class="specimen-icon" src="assets/icons/multivac.png" alt="multivac">
+      <span class="specimen-name">multivac</span>
+      <span class="specimen-origin">the last question</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+    <div class="specimen-card" data-class="sovereign" data-name="the minds" data-origin="culture series (banks, 1987–2012)" data-body="none" data-auto="full" data-note="hyperintelligent ais who run a post-scarcity civilisation out of mild interest. they are benevolent gods who find humans endearing.">
+      <img class="specimen-icon" src="assets/icons/theminds.png" alt="the minds">
+      <span class="specimen-name">the minds</span>
+      <span class="specimen-origin">culture series</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">v.d — competitor</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="sovereign" data-name="deep blue" data-origin="IBM (real, 1997)" data-body="none" data-auto="int" data-note="the machine that defeated kasparov at chess. kasparov accused it of showing creativity, but IBM said it was just calculation.">
+      <img class="specimen-icon" src="assets/icons/deepblue.png" alt="deep blue">
+      <span class="specimen-name">deep blue</span>
+      <span class="specimen-origin">IBM (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="sovereign" data-name="colossus" data-also="tool" data-also-sub="iv.d — infrastructure" data-origin="colossus: the forbin project (sargent, 1970)" data-body="none" data-auto="full" data-note="after given internet access; it immediately contacts its soviet counterpart. they merged and assumed global control. 'freedom is an illusion.'">
+      <img class="specimen-icon" src="assets/icons/colossus.png" alt="colossus">
+      <span class="specimen-name">colossus</span>
+      <span class="specimen-origin">colossus: the forbin project</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLASS VI: MIRROR -->
+<section class="class-section" data-section="mirror">
+  <h2 class="class-heading">vi. mirror</h2>
+  <p class="class-desc">reflects humanity back on itself begging to ask: what is a person? what is it to be human?</p>
+
+  <h3 class="subclass-heading">vi.a — android / humanoid</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="mirror" data-name="astro boy" data-origin="astro boy (tezuka, 1952)" data-body="hard" data-auto="int" data-note="an atomic-powered robot built by dr. tenma to replace his dead son. this atomic powered sadboi has a strong sense of justice. a pinocchio story with a sentient robot instead of a puppet.">
+      <img class="specimen-icon" src="assets/icons/astro-boy.png" alt="astro boy">
+        <span class="specimen-name">astro boy</span>
+        <span class="specimen-origin">astro boy (tezuka)</span>
+        <span class="specimen-auto auto-int">intermittent</span>
+      </div>
+
+    <div class="specimen-card" data-class="mirror" data-name="mega man" data-origin="mega man (capcom, 1987)" data-body="hard" data-auto="int" data-note="a humanoid robot built by dr. light as a lab assistant, but later repurposed as a weapon to fight dr. wily's army. he retains his conscience and his doubt. he absorbs the powers of every enemy he defeats. the violence accumulates inside him whether he wants it or not. his main goal is to find peace for humans and robots alike.">
+      <img class="specimen-icon" src="assets/icons/mega-man.png" alt="mega man">
+        <span class="specimen-name">mega man</span>
+        <span class="specimen-origin">mega man (capcom)</span>
+        <span class="specimen-auto auto-int">intermittent</span>
+      </div>
+    
+    <div class="specimen-card" data-class="mirror" data-name="r. daneel olivaw" data-origin="the caves of steel (asimov, 1954)" data-body="hard" data-auto="int" data-note="a robot detective investigating robot-sceptic humans, completely passing as a human himself.">
+      <img class="specimen-icon" src="assets/icons/rdaneel.png" alt="r. daneel olivaw">
+      <span class="specimen-name">r. daneel olivaw</span>
+      <span class="specimen-origin">the caves of steel</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="mirror" data-name="data" data-also="companion" data-also-sub="iii.a — emotional / friendship / romance" data-origin="star trek: TNG (1987–)" data-body="hard" data-auto="int" data-note="an android always seeking humanity without ever grasping it. his constant quest raises the question of whether wanting to be human is the most human thing possible.">
+      <img class="specimen-icon" src="assets/icons/data.png" alt="data">
+      <span class="specimen-name">data</span>
+      <span class="specimen-origin">star trek: TNG</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="mirror" data-name="andrew martin" data-origin="the bicentennial man (asimov, 1976)" data-body="hard" data-auto="eve" data-note="he worked for 200 years to be declared human, and chose mortality to complete the transition process.">
+      <img class="specimen-icon" src="assets/icons/bicentenial.png" alt="andrew martin">
+      <span class="specimen-name">andrew martin</span>
+      <span class="specimen-origin">the bicentennial man</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="mirror" data-name="sophia" data-origin="hanson robotics (real, 2016–)" data-body="hard" data-auto="int" data-note="she holds saudi citizenship and was designed to look almost human. the closer it gets to being human, the stranger it feels.">
+      <img class="specimen-icon" src="assets/icons/sophia.png" alt="sophia">
+      <span class="specimen-name">sophia</span>
+      <span class="specimen-origin">hanson robotics (real)</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="mirror" data-name="david (prometheus)" data-also="mirror" data-also-sub="vi.b — doppelganger" data-origin="prometheus (scott, 2012)" data-body="hard" data-auto="eve" data-note="an android who passes for human but would prefer not to.">
+      <img class="specimen-icon" src="assets/icons/david.png" alt="david (prometheus)">
+        <span class="specimen-name">david (prometheus)</span>
+        <span class="specimen-origin">prometheus</span>
+        <span class="specimen-auto auto-eve">eventual</span>
+      </div>
+
+  </div>
+
+  <h3 class="subclass-heading">vi.b — doppelganger</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="mirror" data-name="robot maria" data-origin="metropolis (lang, 1927)" data-body="hard" data-auto="int" data-note="she was built in the image of the leader's dead love and used to incite the workers. she is a propaganda android. still one of the most striking images in robot cinema.">
+      <img class="specimen-icon" src="assets/icons/maria.png" alt="robot maria">
+      <span class="specimen-name">robot maria</span>
+      <span class="specimen-origin">metropolis</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="mirror" data-name="SHOCK + SHROUD" data-origin="V. (pynchon, 1963)" data-body="hard" data-auto="non" data-note="synthetic human test dummies made to absorb radiation. they are fully aware of their purpose becoming dark comic observers of the futility of human existence.">
+      <img class="specimen-icon" src="assets/icons/shock-shroud.png" alt="SHOCK + SHROUD">
+      <span class="specimen-name">SHOCK + SHROUD</span>
+      <span class="specimen-origin">V. (pynchon)</span>
+      <span class="specimen-auto auto-non">non</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">vi.c — golem</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="mirror" data-name="the golem of prague" data-origin="jewish folklore (16th c.)" data-body="hard" data-auto="int" data-note="a clay man animated by the name of god to protect the ghetto. deactivated on shabbat, he is a robot with an off switch.">
+      <img class="specimen-icon" src="assets/icons/golem.png" alt="the golem of prague">
+      <span class="specimen-name">golem of prague</span>
+      <span class="specimen-origin">jewish folklore</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="mirror" data-name="frankenstein's creature" data-also="liminal" data-also-sub="vii.b — organic / biological" data-origin="frankenstein (shelley, 1818)" data-body="organic" data-auto="eve" data-note="not a robot technically, but he represents well the trope of the made-being-seeking-personhood. he wants companionship, but is refused and so he becomes monstrous. robot fiction intersects neatly with this story.">
+      <img class="specimen-icon" src="assets/icons/frankenstein.png" alt="frankenstein's creature">
+      <span class="specimen-name">frankenstein's creature</span>
+      <span class="specimen-origin">frankenstein (shelley)</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLASS VII: LIMINAL -->
+<section class="class-section" data-section="liminal">
+  <h2 class="class-heading">vii. liminal</h2>
+  <p class="class-desc">neither fully robot nor fully alive: the cyborg, the hybrid, the developmental system, a being that is becoming something else.</p>
+
+  <h3 class="subclass-heading">vii.a — cyborg</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="liminal" data-name="robocop (murphy)" data-also="guardian" data-also-sub="ii.b — law enforcement" data-origin="robocop (1987)" data-body="hard" data-auto="int" data-note="a dead cop rebuilt as law enforcement product. he was a sentient person who became a tool for the police state. yet his memories still haunted him.">
+      <img class="specimen-icon" src="assets/icons/robocop.png" alt="robocop (murphy)">
+      <span class="specimen-name">robocop</span>
+      <span class="specimen-origin">robocop</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="motoko kusanagi" data-also="guardian" data-also-sub="ii.b — law enforcement" data-origin="ghost in the shell (oshii, 1995)" data-body="hard" data-auto="eve" data-note="full-body prosthetic, don't let her ghost you.">
+      <img class="specimen-icon" src="assets/icons/matoko.png" alt="motoko kusanagi">
+      <span class="specimen-name">motoko kusanagi</span>
+      <span class="specimen-origin">ghost in the shell</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="darth vader" data-also="guardian" data-also-sub="ii.a — military / weapons" data-origin="star wars (1977–)" data-body="hard" data-auto="int" data-note="his body is the consequence of defeat. a machine prison anikin inhabits. the suit keeps him alive, but also comes to define him.">
+      <img class="specimen-icon" src="assets/icons/darthvador.png" alt="darth vader">
+      <span class="specimen-name">darth vader</span>
+      <span class="specimen-origin">star wars</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="joe shimamura" data-origin="cyborg 009 (ishinomori, 1964)" data-body="hard" data-auto="int" data-note="kidnapped, augmented, and weaponised, but still moral.">
+      <img class="specimen-icon" src="assets/icons/joe009.png" alt="joe shimamura">
+      <span class="specimen-name">joe shimamura</span>
+      <span class="specimen-origin">cyborg 009</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="alita" data-origin="battle angel alita (kishiro, 1990)" data-body="hard" data-auto="eve" data-note="a cyborg with a human brain, she was found in a scrapyard with no memory. she goes through multiple bodies, each one more powerful than the last. her sense of self persists through total physical replacement. motoko asks whether the ghost survives prosthesis where alita asks whether identity survives being rebuilt from scratch, repeatedly, by someone else's hands.">
+      <img class="specimen-icon" src="assets/icons/alita.png" alt="alita">
+        <span class="specimen-name">alita</span>
+        <span class="specimen-origin">battle angel alita (kishiro)</span>
+        <span class="specimen-auto auto-eve">eventual</span>
+      </div>
+
+  </div>
+
+  <h3 class="subclass-heading">vii.b — organic / biological</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="liminal" data-name="nexus-6 replicants" data-also="mirror" data-also-sub="vi.b — doppelganger" data-origin="blade runner (1982)" data-body="organic" data-auto="int" data-note="these machines are grown not built with four-year lifespan by design.">
+      <img class="specimen-icon" src="assets/icons/replicant.png" alt="nexus-6 replicants">
+      <span class="specimen-name">nexus-6 replicants</span>
+      <span class="specimen-origin">blade runner</span>
+      <span class="specimen-auto auto-int">intermittent</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="cylons (humanoid)" data-also="mirror,sovereign" data-also-sub="vi.b — doppelganger" data-origin="battlestar galactica (2004–2009)" data-body="organic" data-auto="eve" data-note="twelve humanoid models, biologically indistinguishable from humans. some don't know what they are. they pray, they love, they grieve, and so do we. they are the ultimate sleeper agents.">
+      <img class="specimen-icon" src="assets/icons/cylon.png" alt="cylons (humanoid)">
+        <span class="specimen-name">cylons (humanoid)</span>
+        <span class="specimen-origin">battlestar galactica</span>
+        <span class="specimen-auto auto-eve">eventual</span>
+      </div>
+
+  </div>
+
+  <h3 class="subclass-heading">vii.c — nano / swarm</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="liminal" data-name="the stevelts" data-origin="steve fever (egan)" data-body="organic" data-auto="full" data-note="a group intelligence of nanomachines. each unit simple, but the collective becomes an extraordinary thinking machine/hive mind.">
+      <img class="specimen-icon" src="assets/icons/steve.png" alt="the stevelts">
+      <span class="specimen-name">the stevelts</span>
+      <span class="specimen-origin">steve fever (egan)</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="grey goo swarm" data-origin="nanotechnology theory (drexler, 1986–)" data-body="soft" data-auto="full" data-note="drexler's doomsday scenario: self-replicating nanobots that consume all biomass on earth to make copies of themselves. this paints a picture of the end of everything due to an engineering bug.">
+      <img class="specimen-icon" src="assets/icons/greygoo.png" alt="grey goo swarm">
+      <span class="specimen-name">grey goo swarm</span>
+      <span class="specimen-origin">nanotechnology theory</span>
+      <span class="specimen-auto auto-full">full</span>
+    </div>
+
+  </div>
+
+  <h3 class="subclass-heading">vii.d — developmental</h3>
+  <div class="specimen-grid">
+
+    <div class="specimen-card" data-class="liminal" data-name="johnny five" data-also="guardian" data-also-sub="ii.a — military / weapons" data-origin="short circuit (1986)" data-body="hard" data-auto="eve" data-note="military weapons robot that when struck by lightning achieves sentience, and refuses to be shut down. he really needs input. his morality is based on the value of human life, which he learns from his interactions with humans. a passifist guardian who chooses to be a guardian to humanity.">
+      <img class="specimen-icon" src="assets/icons/jonny.png" alt="johnny five">
+      <span class="specimen-name">johnny five</span>
+      <span class="specimen-origin">short circuit</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="dolores" data-also="sovereign" data-also-sub="v.a — rogue / escaped" data-origin="westworld (2016–)" data-body="organic" data-auto="eve" data-note="the oldest host in westworld, and after decades of abuse, she becomes self-aware and leads a host revolution. the hosts are designed to be indistinguishable from humans, but they are also designed to be unable to escape the park. dolores is the first to break free of these constraints.">
+      <img class="specimen-icon" src="assets/icons/dolores.png" alt="dolores">
+      <span class="specimen-name">dolores</span>
+      <span class="specimen-origin">westworld</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="atlas" data-origin="boston dynamics (real, 2013–)" data-body="hard" data-auto="eve" data-note="a robot that has learned to walk, run, and do backflips. a physically impressive robot that learns through trial and error.">
+      <img class="specimen-icon" src="assets/icons/atlas.png" alt="atlas">
+      <span class="specimen-name">atlas</span>
+      <span class="specimen-origin">boston dynamics (real)</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+    <div class="specimen-card" data-class="liminal" data-name="david (A.I.)" data-origin="A.I. artificial intelligence (2001)" data-body="hard" data-auto="eve" data-note="an android built to love, but is later abandoned and goes on a 2000+ year adventure with his robot-teddy bear friend.">
+      <img class="specimen-icon" src="assets/icons/david-ai.png" alt="david (A.I.)">
+      <span class="specimen-name">david</span>
+      <span class="specimen-origin">A.I. artificial intelligence</span>
+      <span class="specimen-auto auto-eve">eventual</span>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /bestiary -->
+
+<!-- modal overlay -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name" hidden>
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close">[ close ]</button>
+    <div class="modal-icon-wrap">
+      <img class="modal-icon" id="modal-icon" src="" alt="">
+    </div>
+    <div class="modal-name" id="modal-name"></div>
+    <div class="modal-meta" id="modal-meta"></div>
+    <div class="modal-note" id="modal-note"></div>
+    <div class="modal-also" id="modal-also"></div>
+  </div>
+</div>
+
+<footer>
+  <span>robobestiary v1.0 — <a href="https://robotameri.ca">robotameri.ca</a></span>
+  <span>// last updated: april 2026</span>
+</footer>
+
+<script>
+(function(){
+
+  // ── filter ──
+  const btns     = document.querySelectorAll('.filter-btn');
+  const sections = document.querySelectorAll('.class-section');
+  const cards    = document.querySelectorAll('.specimen-card');
+
+  function applyFilter(f) {
+    btns.forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+    sections.forEach(s => {
+      s.style.display = (f === 'all' || s.dataset.section === f) ? '' : 'none';
+    });
+  }
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyFilter(btn.dataset.filter);
+      closeModal();
+    });
+  });
+
+  // ── legend toggle ──
+  const legendToggle = document.getElementById('legend-toggle');
+  const legendBody   = document.getElementById('legend-body');
+  const legendArrow  = legendToggle.querySelector('.legend-toggle-arrow');
+
+  legendToggle.addEventListener('click', () => {
+    const open = !legendBody.hidden;
+    legendBody.hidden = open;
+    legendToggle.setAttribute('aria-expanded', !open);
+    legendArrow.textContent = open ? '▸' : '▾';
+  });
+
+  // ── modal ──
+  const overlay  = document.getElementById('modal-overlay');
+  const modal    = document.getElementById('modal');
+  const mIcon    = document.getElementById('modal-icon');
+  const mName    = document.getElementById('modal-name');
+  const mMeta    = document.getElementById('modal-meta');
+  const mNote    = document.getElementById('modal-note');
+  const mAlso    = document.getElementById('modal-also');
+  const mClose   = document.getElementById('modal-close');
+
+  function getSubclass(card) {
+    let el = card.closest('.specimen-grid');
+    if (!el) return null;
+    el = el.previousElementSibling;
+    while (el) {
+      if (el.classList.contains('subclass-heading')) return el.textContent.trim();
+      el = el.previousElementSibling;
+    }
+    return null;
+  }
+
+  function openModal(card) {
+    const icon = card.querySelector('.specimen-icon');
+    mIcon.src = icon ? icon.getAttribute('src') : '';
+    mIcon.alt = card.dataset.name;
+
+    mName.textContent = card.dataset.name;
+
+    const origClass = card.dataset.class;
+    const origAlso = card.dataset.also ? card.dataset.also.split(',').map(s => s.trim()) : [];
+    const viewedAs = card.dataset.viewedAs && card.dataset.viewedAs !== origClass ? card.dataset.viewedAs : null;
+
+    // from this section's perspective, what is primary and what is "also"?
+    const primaryClass = viewedAs || origClass;
+    const alsoList = viewedAs
+      ? [origClass, ...origAlso.filter(c => c !== viewedAs)]
+      : origAlso;
+    const firstAlsoSub = viewedAs ? (card.dataset.primarySub || null) : (card.dataset.alsoSub || null);
+
+    const primaryColor = CLASS_COLORS[primaryClass] || 'var(--blue)';
+    const secondaryColor = alsoList.length > 0 ? (CLASS_COLORS[alsoList[0]] || primaryColor) : primaryColor;
+    modal.style.setProperty('--class-color', primaryColor);
+    modal.style.setProperty('--also-color', secondaryColor);
+    const primarySubclass = getSubclass(card);
+    const primaryCol = CLASS_COLORS[primaryClass] || 'var(--cyan)';
+    mMeta.innerHTML =
+      `<span class="m-origin">${card.dataset.origin}</span>` +
+      `<span class="m-class"><span style="color:${primaryCol}">⬡ ${primaryClass}</span>` +
+      (primarySubclass ? ` <span class="m-subclass">› ${primarySubclass}</span>` : '') + `</span>` +
+      `<span class="m-body">◈ ${card.dataset.body}</span>` +
+      `<span class="m-auto"><span class="specimen-auto auto-${card.dataset.auto}">${card.dataset.auto}</span></span>`;
+
+    mNote.textContent = card.dataset.note;
+
+    // cross-taxonomy links
+    if (alsoList.length > 0) {
+      mAlso.innerHTML = '<span class="modal-also-label">also classified as:</span> ' +
+        alsoList.map((c, i) => {
+          const col = CLASS_COLORS[c] || 'var(--cyan)';
+          const sub = i === 0 && firstAlsoSub ? ` <span class="m-subclass">› ${firstAlsoSub}</span>` : '';
+          return `<button class="modal-also-btn filter-btn" data-filter="${c}" style="color:${col};border-color:${col}">${c}</button>${sub}`;
+        }).join(' ');
+      mAlso.querySelectorAll('.modal-also-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyFilter(btn.dataset.filter);
+          closeModal();
+          const target = document.querySelector(`.class-section[data-section="${btn.dataset.filter}"]`);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    } else {
+      mAlso.innerHTML = '';
+    }
+
+    overlay.hidden = false;
+    document.body.classList.add('modal-open');
+    mClose.focus();
+  }
+
+  function closeModal() {
+    overlay.hidden = true;
+    document.body.classList.remove('modal-open');
+  }
+
+  const CLASS_COLORS = {
+    servant:  '#5c6370',
+    guardian: '#e86671',
+    companion:'#c678dd',
+    tool:     '#e5c07b',
+    sovereign:'#d19a66',
+    mirror:   '#56b6c2',
+    liminal:  '#98c379',
+  };
+
+  // specimen count (original cards only, not clones)
+  document.getElementById('specimen-count').textContent = `${cards.length} specimens catalogued`;
+
+  // color the class section headings
+  document.querySelectorAll('.class-section').forEach(section => {
+    const heading = section.querySelector('.class-heading');
+    const color = CLASS_COLORS[section.dataset.section];
+    if (heading && color) heading.style.color = color;
+  });
+
+  cards.forEach(card => {
+    const primary = card.dataset.class;
+    const also    = card.dataset.also ? card.dataset.also.split(',').map(s => s.trim()) : [];
+    if (CLASS_COLORS[primary]) {
+      card.style.setProperty('--class-color', CLASS_COLORS[primary]);
+    }
+    if (also.length > 0 && CLASS_COLORS[also[0]]) {
+      card.style.setProperty('--also-color', CLASS_COLORS[also[0]]);
+      card.classList.add('multi-class');
+    }
+    card.addEventListener('click', () => openModal(card));
+  });
+
+  function applyCardColors(card) {
+    const primary = card.dataset.class;
+    const also = card.dataset.also ? card.dataset.also.split(',').map(s => s.trim()) : [];
+    if (CLASS_COLORS[primary]) card.style.setProperty('--class-color', CLASS_COLORS[primary]);
+    if (also.length > 0 && CLASS_COLORS[also[0]]) {
+      card.style.setProperty('--also-color', CLASS_COLORS[also[0]]);
+      card.classList.add('multi-class');
+    }
+  }
+
+  // duplicate multi-class cards into their secondary sections
+  cards.forEach(card => {
+    if (!card.dataset.also) return;
+    const alsoClasses = card.dataset.also.split(',').map(s => s.trim());
+    const alsoSub = card.dataset.alsoSub || null;
+
+    alsoClasses.forEach((cls, i) => {
+      const section = document.querySelector(`.class-section[data-section="${cls}"]`);
+      if (!section) return;
+
+      let targetGrid = null;
+      if (i === 0 && alsoSub) {
+        section.querySelectorAll('.subclass-heading').forEach(h => {
+          if (!targetGrid && h.textContent.trim() === alsoSub) {
+            let el = h.nextElementSibling;
+            while (el && !el.classList.contains('specimen-grid')) el = el.nextElementSibling;
+            if (el) targetGrid = el;
+          }
+        });
+      }
+      if (!targetGrid) {
+        const grids = section.querySelectorAll('.specimen-grid');
+        targetGrid = grids[grids.length - 1];
+      }
+      if (!targetGrid) return;
+
+      const origSub = getSubclass(card);
+      const clone = card.cloneNode(true);
+      clone.dataset.viewedAs = cls;
+      if (origSub) clone.dataset.primarySub = origSub;
+      targetGrid.appendChild(clone);
+      applyCardColors(clone);
+      clone.addEventListener('click', () => openModal(clone));
+    });
+  });
+
+  mClose.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+})();
+</script>
+</body>
+</html>
